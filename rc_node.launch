@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="rc_usb_bridge" type="rc_usb_node.py" name="rc_usb_node" output="screen"> </node>
+  <node pkg="rc_usb_bridge" type="rc_udp_bridge.py" name="rc_udp_bridge" output="screen"> </node>
+</launch>

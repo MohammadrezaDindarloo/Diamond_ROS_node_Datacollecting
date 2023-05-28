@@ -1,0 +1,216 @@
+; Auto-generated. Do not edit!
+
+
+(cl:in-package aras_cam_daq-msg)
+
+
+;//! \htmlinclude diamond.msg.html
+
+(cl:defclass <diamond> (roslisp-msg-protocol:ros-message)
+  ((header
+    :reader header
+    :initarg :header
+    :type std_msgs-msg:Header
+    :initform (cl:make-instance 'std_msgs-msg:Header))
+   (Turq
+    :reader Turq
+    :initarg :Turq
+    :type (cl:vector cl:integer)
+   :initform (cl:make-array 0 :element-type 'cl:integer :initial-element 0))
+   (Encoders
+    :reader Encoders
+    :initarg :Encoders
+    :type (cl:vector cl:integer)
+   :initform (cl:make-array 0 :element-type 'cl:integer :initial-element 0))
+   (IMU
+    :reader IMU
+    :initarg :IMU
+    :type (cl:vector cl:fixnum)
+   :initform (cl:make-array 0 :element-type 'cl:fixnum :initial-element 0))
+   (TS
+    :reader TS
+    :initarg :TS
+    :type (cl:vector cl:integer)
+   :initform (cl:make-array 0 :element-type 'cl:integer :initial-element 0)))
+)
+
+(cl:defclass diamond (<diamond>)
+  ())
+
+(cl:defmethod cl:initialize-instance :after ((m <diamond>) cl:&rest args)
+  (cl:declare (cl:ignorable args))
+  (cl:unless (cl:typep m 'diamond)
+    (roslisp-msg-protocol:msg-deprecation-warning "using old message class name aras_cam_daq-msg:<diamond> is deprecated: use aras_cam_daq-msg:diamond instead.")))
+
+(cl:ensure-generic-function 'header-val :lambda-list '(m))
+(cl:defmethod header-val ((m <diamond>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader aras_cam_daq-msg:header-val is deprecated.  Use aras_cam_daq-msg:header instead.")
+  (header m))
+
+(cl:ensure-generic-function 'Turq-val :lambda-list '(m))
+(cl:defmethod Turq-val ((m <diamond>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader aras_cam_daq-msg:Turq-val is deprecated.  Use aras_cam_daq-msg:Turq instead.")
+  (Turq m))
+
+(cl:ensure-generic-function 'Encoders-val :lambda-list '(m))
+(cl:defmethod Encoders-val ((m <diamond>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader aras_cam_daq-msg:Encoders-val is deprecated.  Use aras_cam_daq-msg:Encoders instead.")
+  (Encoders m))
+
+(cl:ensure-generic-function 'IMU-val :lambda-list '(m))
+(cl:defmethod IMU-val ((m <diamond>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader aras_cam_daq-msg:IMU-val is deprecated.  Use aras_cam_daq-msg:IMU instead.")
+  (IMU m))
+
+(cl:ensure-generic-function 'TS-val :lambda-list '(m))
+(cl:defmethod TS-val ((m <diamond>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader aras_cam_daq-msg:TS-val is deprecated.  Use aras_cam_daq-msg:TS instead.")
+  (TS m))
+(cl:defmethod roslisp-msg-protocol:serialize ((msg <diamond>) ostream)
+  "Serializes a message object of type '<diamond>"
+  (roslisp-msg-protocol:serialize (cl:slot-value msg 'header) ostream)
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'Turq))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let* ((signed ele) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    ))
+   (cl:slot-value msg 'Turq))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'Encoders))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let* ((signed ele) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 4294967296) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) unsigned) ostream)
+    ))
+   (cl:slot-value msg 'Encoders))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'IMU))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let* ((signed ele) (unsigned (cl:if (cl:< signed 0) (cl:+ signed 65536) signed)))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) unsigned) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) unsigned) ostream)
+    ))
+   (cl:slot-value msg 'IMU))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'TS))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:write-byte (cl:ldb (cl:byte 8 0) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 8) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 16) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 24) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 32) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 40) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 48) ele) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 56) ele) ostream))
+   (cl:slot-value msg 'TS))
+)
+(cl:defmethod roslisp-msg-protocol:deserialize ((msg <diamond>) istream)
+  "Deserializes a message object of type '<diamond>"
+  (roslisp-msg-protocol:deserialize (cl:slot-value msg 'header) istream)
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'Turq) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'Turq)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296)))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'Encoders) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'Encoders)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 16) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 24) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:if (cl:< unsigned 2147483648) unsigned (cl:- unsigned 4294967296)))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'IMU) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'IMU)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:let ((unsigned 0))
+      (cl:setf (cl:ldb (cl:byte 8 0) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:ldb (cl:byte 8 8) unsigned) (cl:read-byte istream))
+      (cl:setf (cl:aref vals i) (cl:if (cl:< unsigned 32768) unsigned (cl:- unsigned 65536)))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'TS) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'TS)))
+    (cl:dotimes (i __ros_arr_len)
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 32) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 40) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 48) (cl:aref vals i)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 56) (cl:aref vals i)) (cl:read-byte istream)))))
+  msg
+)
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<diamond>)))
+  "Returns string type for a message object of type '<diamond>"
+  "aras_cam_daq/diamond")
+(cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql 'diamond)))
+  "Returns string type for a message object of type 'diamond"
+  "aras_cam_daq/diamond")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<diamond>)))
+  "Returns md5sum for a message object of type '<diamond>"
+  "08a19a8bb047aab7f948074955b487b4")
+(cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'diamond)))
+  "Returns md5sum for a message object of type 'diamond"
+  "08a19a8bb047aab7f948074955b487b4")
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<diamond>)))
+  "Returns full string definition for message of type '<diamond>"
+  (cl:format cl:nil "Header header~%int32[]                  Turq~%int32[]                  Encoders~%int16[]                  IMU~%uint64[]                 TS~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'diamond)))
+  "Returns full string definition for message of type 'diamond"
+  (cl:format cl:nil "Header header~%int32[]                  Turq~%int32[]                  Encoders~%int16[]                  IMU~%uint64[]                 TS~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%string frame_id~%~%~%"))
+(cl:defmethod roslisp-msg-protocol:serialization-length ((msg <diamond>))
+  (cl:+ 0
+     (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'Turq) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'Encoders) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'IMU) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 2)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'TS) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+))
+(cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <diamond>))
+  "Converts a ROS message object to a list"
+  (cl:list 'diamond
+    (cl:cons ':header (header msg))
+    (cl:cons ':Turq (Turq msg))
+    (cl:cons ':Encoders (Encoders msg))
+    (cl:cons ':IMU (IMU msg))
+    (cl:cons ':TS (TS msg))
+))

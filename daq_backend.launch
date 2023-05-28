@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find pointgrey_camera_driver)/launch/bumblebee.launch" />
+  <node pkg="aras_cam_daq" type="matlab_extra_information.py" name="matlab_daq_node_matlab" output="screen"> </node>
+  <node pkg="aras_cam_daq" type="cdrpm_central_daq_node.py" name="matlab_daq_node_daq" output="screen"> </node>
+  <node pkg="rc_usb_bridge" type="rc_usb_node.py" name="rc_usb_node" output="screen"> </node>
+  <node pkg="rc_usb_bridge" type="rc_udp_bridge.py" name="rc_udp_bridge" output="screen"> </node>
+</launch>

@@ -1,0 +1,2 @@
+aras_cam_daq
+-DCATKIN_DEVEL_PREFIX=/home/mohammad/Diamond_SF/collector_ws/devel -DCMAKE_INSTALL_PREFIX=/home/mohammad/Diamond_SF/collector_ws/install -G Unix Makefiles

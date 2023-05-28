@@ -1,0 +1,8 @@
+prefix=/home/mohammad/Diamond_SF/collector_ws/devel
+
+Name: aras_cam_daq
+Description: Description of aras_cam_daq
+Version: 0.0.0
+Cflags: -I/home/mohammad/Diamond_SF/collector_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs roscpp rospy std_msgs message_runtime message_generation sensor_msgs
